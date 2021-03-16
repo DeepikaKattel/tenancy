@@ -5,10 +5,15 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Tenancy\Identification\Concerns\AllowsTenantIdentification;
+use Tenancy\Identification\Contracts\Tenant;
 
-class User extends Authenticatable
+
+class User extends Authenticatable implements Tenant
 {
+
     use Notifiable;
+    use AllowsTenantIdentification;
 
     /**
      * The attributes that are mass assignable.

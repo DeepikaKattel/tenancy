@@ -3,9 +3,10 @@
 namespace App\Providers;
 
 
+
+use App\User;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use App\User;
 use Tenancy\Identification\Contracts\ResolvesTenants;
 
 class AppServiceProvider extends ServiceProvider
